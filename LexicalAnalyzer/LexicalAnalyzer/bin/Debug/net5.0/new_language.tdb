@@ -1,0 +1,17 @@
+//This is a comment
+/*This is other comment*/
+
+
+Json jsonValue = "{Some_value: 'value', otherValue: [{ valueInList: 'result' }]}"
+
+Table tableOtherValue = new("otherValue");
+
+tableOtherValue.SetColums(jsonValue.OtherValue).ApplyValues()
+
+tableOtherValue.DefaultSchema()
+
+string scriptSQL = tableOtherValue.GetCreate("SQLServer")
+
+string scriptSQL2 = tableOtherValue.GetDropAndCreate("SQLServer")
+
+string scriptSQL2 = tableOtherValue.GetDropAndCreateWithData("SQLServer")
